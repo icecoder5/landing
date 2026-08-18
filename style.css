@@ -100,7 +100,8 @@ footer {
   }
 
   .split {
-    margin: 52px 0 26px;
+    /* banner is 1600x533, so its rendered height is ~33.31% of viewport width */
+    margin: 33.31vw 0 26px;
   }
 
   footer {
