@@ -26,10 +26,42 @@ body {
   overflow-x: hidden;
 }
 
+.banner-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
 .banner {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.banner-woman {
+  position: absolute;
+  top: 0;
+  left: 55.9375%;
+  width: 44.0625%;
+  height: 100%;
+  animation: bannerFloat 6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes bannerFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.015);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-woman {
+    animation: none;
+  }
 }
 
 main {
