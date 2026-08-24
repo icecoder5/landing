@@ -450,11 +450,11 @@ h1, h2, h3 {
 .testimonial blockquote::before {
   content: "\201C";
   font-family: "Playfair Display", serif;
-  font-size: 40px;
+  font-size: 64px;
   color: var(--rose);
-  display: block;
-  line-height: 0.6;
-  margin-bottom: 12px;
+  line-height: 0;
+  vertical-align: -0.3em;
+  margin-right: 4px;
 }
 
 .testimonial .photos {
