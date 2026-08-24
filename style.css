@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Oswald:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
-  --cream: #f3e8de;
+  --cream: #f2e6dd;
   --white: #fffdfb;
   --card-soft: #f8f0e8;
   --card-tan: #f5efe6;
@@ -508,6 +508,10 @@ footer {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
+  .nav-directions {
+    display: none;
+  }
+
   .hero {
     flex-direction: column;
     align-items: stretch;
