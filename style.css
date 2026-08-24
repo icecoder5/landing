@@ -300,8 +300,14 @@ h1, h2, h3 {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   border-radius: 18px;
   padding: 36px 32px;
+}
+
+.card ul {
+  flex: 1;
 }
 
 .card-participants {
