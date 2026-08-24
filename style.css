@@ -280,8 +280,9 @@ h1, h2, h3 {
   text-align: center;
 }
 
-.about-grid .icon-item svg {
-  color: var(--gold);
+.about-grid .icon-item img {
+  width: 56px;
+  height: auto;
   margin-bottom: 14px;
 }
 
@@ -413,13 +414,23 @@ h1, h2, h3 {
 .direction-item {
   width: 78px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.direction-icon {
+  height: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 8px;
 }
 
 .direction-item img {
   display: block;
   width: 34px;
   height: auto;
-  margin: 0 auto 8px;
 }
 
 .direction-item p {
@@ -550,5 +561,9 @@ footer {
 
   .direction-item {
     width: 100%;
+  }
+
+  .direction-item:last-child {
+    grid-column: 1 / -1;
   }
 }
