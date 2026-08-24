@@ -565,9 +565,9 @@ footer {
 
   .nav-links {
     flex-wrap: nowrap;
-    gap: 6px;
-    font-size: 12px;
-    justify-content: center;
+    gap: 4px;
+    font-size: 13.5px;
+    justify-content: space-between;
     white-space: nowrap;
     width: 100%;
   }
