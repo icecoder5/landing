@@ -519,11 +519,17 @@ footer {
 
   .hero-poster-mobile {
     display: block;
+    width: 100%;
     margin: 0 0 24px;
   }
 
   .hero-photo {
     display: none;
+  }
+
+  .hero-text {
+    flex-basis: auto;
+    min-width: 0;
   }
 
   .hero-text h1,
@@ -540,10 +546,22 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .section-title::before,
+  .section-title::after {
+    display: none;
+  }
+
+  .section-title {
+    padding: 0 20px;
+  }
+
   .nav-links {
-    gap: 16px;
-    font-size: 13px;
-    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 6px;
+    font-size: 10.5px;
+    justify-content: space-between;
+    white-space: nowrap;
+    width: 100%;
   }
 
   .testimonial {
