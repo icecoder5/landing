@@ -516,6 +516,10 @@ footer {
     display: none;
   }
 
+  .nav {
+    padding-bottom: 24px;
+  }
+
   .hero {
     flex-direction: column;
     align-items: stretch;
