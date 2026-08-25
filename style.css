@@ -608,7 +608,15 @@ footer {
     width: 100%;
   }
 
+  .direction-item:nth-last-child(2):nth-child(3n+1) {
+    grid-column: 2 / 3;
+  }
+
   .direction-item:last-child {
+    grid-column: 3 / 4;
+  }
+
+  .direction-item:last-child:nth-child(3n+1) {
     grid-column: 1 / -1;
   }
 }
