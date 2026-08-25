@@ -425,6 +425,10 @@ h1, h2, h3 {
   align-items: center;
 }
 
+.direction-item-pair {
+  display: contents;
+}
+
 .direction-icon {
   height: 40px;
   display: flex;
@@ -435,8 +439,10 @@ h1, h2, h3 {
 
 .direction-item img {
   display: block;
-  width: 34px;
+  width: auto;
+  max-width: 34px;
   height: auto;
+  max-height: 40px;
 }
 
 .direction-item p {
@@ -608,15 +614,15 @@ footer {
     width: 100%;
   }
 
-  .direction-item:nth-last-child(2):nth-child(3n+1) {
-    grid-column: 2 / 3;
-  }
-
-  .direction-item:last-child {
-    grid-column: 3 / 4;
-  }
-
-  .direction-item:last-child:nth-child(3n+1) {
+  .direction-item-pair {
     grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .direction-item-pair .direction-item {
+    width: auto;
+    flex: 0 0 33.333%;
   }
 }
