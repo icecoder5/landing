@@ -166,7 +166,7 @@ h1, h2, h3 {
   border-radius: 14px;
   padding: 16px 20px;
   max-width: 420px;
-  background: rgba(193, 123, 111, 0.05);
+  background: var(--white);
 }
 
 .invite-box .icon {
@@ -419,6 +419,7 @@ h1, h2, h3 {
 
 .direction-item {
   width: 78px;
+  flex: 0 0 calc(16.6667% - 17px);
   text-align: center;
   display: flex;
   flex-direction: column;
