@@ -125,6 +125,20 @@
     </div>
   </section>
 
+  <section class="contact-organizer" id="contacts">
+    <p>По вопросам партнёрства и участия в событии обращаться к организатору Ирине Баркарь</p>
+    <div class="contact-buttons">
+      <a class="contact-btn contact-whatsapp" href="https://wa.me/79891290191" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.33 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.04-5.16-2.92-7.04A9.93 9.93 0 0 0 12.04 2zm0 18.2h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.06 0 1.22.88 2.4 1 2.56.13.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <a class="contact-btn contact-max" href="https://max.ru/" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H8l-4 4V5z"/></svg>
+        <span>MAX</span>
+      </a>
+    </div>
+  </section>
+
   <section class="testimonial">
     <blockquote>
       <strong>BEAUTY EXPERIENCE —</strong><br>
@@ -138,7 +152,51 @@
     </div>
   </section>
 
-  <footer id="contacts">&copy; 2026 Beauty Experience</footer>
+  <footer>&copy; 2026 Beauty Experience</footer>
+
+  <audio id="bgm" src="bg-music.mp3" loop preload="none"></audio>
+  <button id="music-toggle" class="music-toggle" aria-label="Включить/выключить музыку" title="Музыка">♪</button>
+
+  <script>
+    (function () {
+      var audio = document.getElementById('bgm');
+      var btn = document.getElementById('music-toggle');
+      var playing = false;
+
+      function updateBtn() {
+        btn.classList.toggle('is-playing', playing);
+      }
+
+      function tryPlay() {
+        var p = audio.play();
+        if (p && p.then) {
+          p.then(function () { playing = true; updateBtn(); })
+           .catch(function () { playing = false; updateBtn(); });
+        }
+      }
+
+      tryPlay();
+
+      function onFirstInteraction() {
+        if (!playing) tryPlay();
+        document.removeEventListener('click', onFirstInteraction);
+        document.removeEventListener('touchstart', onFirstInteraction);
+      }
+      document.addEventListener('click', onFirstInteraction);
+      document.addEventListener('touchstart', onFirstInteraction);
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (playing) {
+          audio.pause();
+          playing = false;
+        } else {
+          tryPlay();
+        }
+        updateBtn();
+      });
+    })();
+  </script>
 
 </body>
 </html>

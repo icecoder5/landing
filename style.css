@@ -166,7 +166,7 @@ h1, h2, h3 {
   border-radius: 14px;
   padding: 16px 20px;
   max-width: 420px;
-  background: var(--white);
+  background: var(--card-soft);
 }
 
 .invite-box .icon {
@@ -503,6 +503,87 @@ h1, h2, h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ---------- Contact organizer ---------- */
+.contact-organizer {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  padding: 0 5vw;
+  text-align: center;
+}
+
+.contact-organizer p {
+  font-size: 15px;
+  color: var(--black);
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.contact-whatsapp {
+  background: #25d366;
+}
+
+.contact-max {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+}
+
+/* ---------- Music toggle ---------- */
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  color: var(--gold);
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.music-toggle:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.music-toggle.is-playing {
+  opacity: 1;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(138, 96, 47, 0.3); }
+  50% { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12), 0 0 0 8px rgba(138, 96, 47, 0); }
 }
 
 /* ---------- Footer ---------- */
