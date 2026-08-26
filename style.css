@@ -257,8 +257,31 @@ h1, h2, h3 {
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--black);
-  margin: 0 0 40px;
+  margin: 0 0 16px;
   position: relative;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  max-width: 220px;
+  margin: 0 auto 40px;
+}
+
+.ornament::before,
+.ornament::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.ornament span {
+  color: var(--gold);
+  font-size: 16px;
+  line-height: 1;
 }
 
 .section-title::before,
