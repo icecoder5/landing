@@ -262,7 +262,7 @@ h1, h2, h3 {
 }
 
 .ornament {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   gap: 14px;
@@ -707,6 +707,10 @@ footer {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
+  .ornament {
+    display: flex;
+  }
+
   .nav-directions {
     display: none;
   }
