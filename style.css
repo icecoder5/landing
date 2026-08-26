@@ -298,7 +298,7 @@ h1, h2, h3 {
 /* ---------- Event details (venue + schedule) ---------- */
 .event-details {
   max-width: 780px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
   padding: 24px 5vw 8px;
   display: flex;
   flex-wrap: wrap;
