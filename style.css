@@ -276,10 +276,10 @@ h1, h2, h3 {
 .event-details {
   max-width: 780px;
   margin: 0 auto;
-  padding: 20px 5vw 10px;
+  padding: 24px 5vw 8px;
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
+  gap: 20px;
   background: var(--card-soft);
   border-radius: 18px;
 }
@@ -289,7 +289,7 @@ h1, h2, h3 {
   align-items: flex-start;
   gap: 12px;
   flex: 1 1 220px;
-  padding: 20px 0;
+  padding: 0;
 }
 
 .event-detail svg {
@@ -312,21 +312,24 @@ h1, h2, h3 {
 
 .event-schedule {
   flex: 1 1 260px;
-  padding: 20px 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
 .schedule-item {
   display: flex;
   gap: 14px;
+  align-items: baseline;
 }
 
 .schedule-time {
   flex-shrink: 0;
-  font-family: "Playfair Display", serif;
-  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: inherit;
   color: var(--gold);
   min-width: 52px;
 }
@@ -335,6 +338,7 @@ h1, h2, h3 {
   display: block;
   font-size: 14px;
   margin-bottom: 2px;
+  line-height: inherit;
 }
 
 .schedule-item p {
