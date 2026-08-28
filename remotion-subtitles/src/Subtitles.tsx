@@ -1,22 +1,29 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
 
-export type Caption = {
-	text: string;
+export type Word = {
+	word: string;
 	start: number; // seconds
 	end: number; // seconds
 };
 
-export const Subtitles: React.FC<{captions: Caption[]}> = ({captions}) => {
+export type CaptionLine = {
+	start: number;
+	end: number;
+	words: Word[];
+};
+
+const ACTIVE_COLOR = '#FFD400';
+const IDLE_COLOR = '#FFFFFF';
+
+export const Subtitles: React.FC<{captions: CaptionLine[]}> = ({captions}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
-	const timeInSeconds = frame / fps;
+	const t = frame / fps;
 
-	const active = captions.find(
-		(c) => timeInSeconds >= c.start && timeInSeconds < c.end,
-	);
+	const activeLine = captions.find((c) => t >= c.start && t < c.end);
 
-	if (!active) {
+	if (!activeLine) {
 		return null;
 	}
 
@@ -25,24 +32,39 @@ export const Subtitles: React.FC<{captions: Caption[]}> = ({captions}) => {
 			style={{
 				justifyContent: 'flex-end',
 				alignItems: 'center',
-				paddingBottom: 120,
+				paddingBottom: 140,
 			}}
 		>
 			<div
 				style={{
-					fontFamily: 'Arial, sans-serif',
-					fontSize: 56,
-					fontWeight: 700,
-					color: 'white',
+					fontFamily: '"Arial Black", Arial, sans-serif',
+					fontSize: 64,
+					fontWeight: 900,
+					textTransform: 'uppercase',
 					textAlign: 'center',
-					maxWidth: '85%',
-					padding: '12px 28px',
-					borderRadius: 12,
-					backgroundColor: 'rgba(0, 0, 0, 0.55)',
-					textShadow: '0 2px 6px rgba(0,0,0,0.6)',
+					maxWidth: '88%',
+					lineHeight: 1.25,
+					WebkitTextStroke: '3px black',
+					paintOrder: 'stroke fill',
 				}}
 			>
-				{active.text}
+				{activeLine.words.map((w, i) => {
+					const isActive = t >= w.start && t < w.end;
+					return (
+						<span
+							key={i}
+							style={{
+								color: isActive ? ACTIVE_COLOR : IDLE_COLOR,
+								display: 'inline-block',
+								marginRight: 14,
+								transform: isActive ? 'scale(1.12)' : 'scale(1)',
+								transition: 'transform 60ms linear',
+							}}
+						>
+							{w.word}
+						</span>
+					);
+				})}
 			</div>
 		</AbsoluteFill>
 	);
