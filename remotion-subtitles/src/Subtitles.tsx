@@ -17,44 +17,48 @@ const ACTIVE_COLOR = '#FFD400';
 const IDLE_COLOR = '#FFFFFF';
 const BRUSH_COLOR = '#3a3a3d';
 
-const BrushBackground: React.FC = () => (
-	<svg
-		style={{
-			position: 'absolute',
-			inset: -28,
-			width: 'calc(100% + 56px)',
-			height: 'calc(100% + 56px)',
-			zIndex: 0,
-		}}
-		viewBox="0 0 100 100"
-		preserveAspectRatio="none"
-	>
-		<filter id="brush-rough">
-			<feTurbulence
-				type="fractalNoise"
-				baseFrequency="0.015 0.09"
-				numOctaves={2}
-				seed={7}
-				result="noise"
-			/>
-			<feDisplacementMap
-				in="SourceGraphic"
-				in2="noise"
-				scale={12}
-				xChannelSelector="R"
-				yChannelSelector="G"
-			/>
-		</filter>
-		<rect x={6} y={12} width={88} height={76} fill={BRUSH_COLOR} fillOpacity={0.88} filter="url(#brush-rough)" />
-	</svg>
-);
+const BrushBackground: React.FC<{seed: number}> = ({seed}) => {
+	const filterId = `brush-rough-${seed}`;
+	return (
+		<svg
+			style={{
+				position: 'absolute',
+				inset: -28,
+				width: 'calc(100% + 56px)',
+				height: 'calc(100% + 56px)',
+				zIndex: 0,
+			}}
+			viewBox="0 0 100 100"
+			preserveAspectRatio="none"
+		>
+			<filter id={filterId}>
+				<feTurbulence
+					type="fractalNoise"
+					baseFrequency="0.015 0.09"
+					numOctaves={2}
+					seed={seed}
+					result="noise"
+				/>
+				<feDisplacementMap
+					in="SourceGraphic"
+					in2="noise"
+					scale={12}
+					xChannelSelector="R"
+					yChannelSelector="G"
+				/>
+			</filter>
+			<rect x={6} y={12} width={88} height={76} fill={BRUSH_COLOR} fillOpacity={0.55} filter={`url(#${filterId})`} />
+		</svg>
+	);
+};
 
 export const Subtitles: React.FC<{captions: CaptionLine[]}> = ({captions}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const t = frame / fps;
 
-	const activeLine = captions.find((c) => t >= c.start && t < c.end);
+	const activeIndex = captions.findIndex((c) => t >= c.start && t < c.end);
+	const activeLine = activeIndex === -1 ? null : captions[activeIndex];
 
 	if (!activeLine) {
 		return null;
@@ -69,7 +73,7 @@ export const Subtitles: React.FC<{captions: CaptionLine[]}> = ({captions}) => {
 			}}
 		>
 			<div style={{position: 'relative', display: 'inline-block', padding: '20px 36px'}}>
-				<BrushBackground />
+				<BrushBackground seed={(activeIndex * 37 + 7) % 100} />
 				<div
 					style={{
 						position: 'relative',
