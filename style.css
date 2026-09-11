@@ -674,7 +674,7 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 12px;
   padding: 20px 16px;
   overflow: hidden;
@@ -683,10 +683,14 @@ h1, h2, h3 {
 .partner-card img {
   min-width: 0;
   max-width: 100%;
-  max-height: 60px;
+  max-height: 88px;
   width: auto;
   height: auto;
   object-fit: contain;
+}
+
+.partner-featured .partner-card {
+  justify-content: center;
 }
 
 .partner-card p {
