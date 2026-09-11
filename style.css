@@ -639,6 +639,8 @@ h1, h2, h3 {
 .partner-featured .partner-card {
   width: 100%;
   max-width: 360px;
+  aspect-ratio: auto;
+  padding: 20px 28px;
 }
 
 .partners-subheading {
@@ -658,9 +660,6 @@ h1, h2, h3 {
 
 .partner-item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
   flex: 0 0 calc(25% - 15px);
   max-width: calc(25% - 15px);
   min-width: 0;
@@ -671,35 +670,33 @@ h1, h2, h3 {
   min-width: 0;
   aspect-ratio: 4 / 3;
   border-radius: 16px;
-  background: var(--card-soft);
+  background: var(--white);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 22px;
+  gap: 12px;
+  padding: 20px 16px;
   overflow: hidden;
 }
 
 .partner-card img {
   min-width: 0;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 60px;
   width: auto;
   height: auto;
   object-fit: contain;
 }
 
-.partner-card-dark {
-  background: #171310;
-  padding: 16px;
-}
-
-.partner-item p {
+.partner-card p {
   margin: 0;
   font-size: 11px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--muted);
   line-height: 1.4;
+  text-align: center;
 }
 
 /* ---------- Contact organizer ---------- */
