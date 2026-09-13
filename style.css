@@ -632,14 +632,16 @@ h1, h2, h3 {
 
 .partner-featured {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
   margin-bottom: 50px;
 }
 
 .partner-featured .partner-card {
   width: 100%;
   max-width: 360px;
-  aspect-ratio: auto;
+  aspect-ratio: 3 / 2;
   padding: 20px 28px;
 }
 
