@@ -682,14 +682,6 @@ h1, h2, h3 {
   object-fit: contain;
 }
 
-.partner-card-dark {
-  background: #1f1f1f;
-}
-
-.partner-card-tikhonova {
-  background: #fbf5ef;
-}
-
 /* ---------- Contact organizer ---------- */
 .contact-organizer {
   max-width: 700px;
