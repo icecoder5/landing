@@ -877,6 +877,10 @@ footer a:hover {
     align-items: stretch;
   }
 
+  .sold-out-stamp {
+    width: 80%;
+  }
+
   .hero-poster-mobile-wrap {
     display: block;
     width: 100%;
