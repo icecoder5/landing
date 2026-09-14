@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beauty Experience</title>
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -88,7 +88,7 @@
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>Подарки и знакомства с брендами</li>
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>Атмосфера вдохновения и заботы о себе</li>
       </ul>
-      <a class="btn btn-participant" href="https://forms.yandex.ru/u/6a8420fdf47e731a2e63a800" target="_blank" rel="noopener">Хочу стать участницей</a>
+      <a class="btn btn-participant" href="https://forms.yandex.ru/u/6a8420fdf47e731a2e63a800" id="participant-btn" rel="noopener">Хочу стать участницей</a>
       <p class="card-caption">Участие по приглашению</p>
     </div>
 
@@ -247,6 +247,13 @@
 
   <footer>&copy; 2026 Beauty Experience · <a href="politika.html">Политика обработки персональных данных</a></footer>
 
+  <div class="ticket-modal-overlay" id="ticket-modal">
+    <div class="ticket-modal" role="dialog" aria-modal="true" aria-label="Билеты недоступны">
+      <p>Билеты на событие больше недоступны!</p>
+      <button type="button" class="ticket-modal-close" id="ticket-modal-close">Закрыть</button>
+    </div>
+  </div>
+
   <audio id="bgm" src="bg-music.mp3" loop preload="none"></audio>
   <button id="music-toggle" class="music-toggle" aria-label="Включить/выключить музыку" title="Музыка">♪</button>
 
@@ -287,6 +294,26 @@
           tryPlay();
         }
         updateBtn();
+      });
+
+      var participantBtn = document.getElementById('participant-btn');
+      var modal = document.getElementById('ticket-modal');
+      var modalClose = document.getElementById('ticket-modal-close');
+
+      function openModal() {
+        modal.classList.add('is-open');
+      }
+      function closeModal() {
+        modal.classList.remove('is-open');
+      }
+
+      participantBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal();
+      });
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeModal();
       });
     })();
   </script>
