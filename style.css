@@ -107,6 +107,7 @@ h1, h2, h3 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 5vw 60px;
+  position: relative;
 }
 
 .hero-poster-mobile-wrap {
@@ -219,6 +220,10 @@ h1, h2, h3 {
   pointer-events: none;
   z-index: 5;
   filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.3));
+}
+
+.sold-out-stamp-desktop {
+  width: clamp(160px, 16vw, 230px);
 }
 
 .hero-photo .photo-frame {
@@ -879,6 +884,11 @@ footer a:hover {
 
   .sold-out-stamp {
     width: 80%;
+    top: 64%;
+  }
+
+  .sold-out-stamp-desktop {
+    display: none;
   }
 
   .hero-poster-mobile-wrap {
