@@ -109,10 +109,15 @@ h1, h2, h3 {
   padding: 40px 5vw 60px;
 }
 
-.hero-poster-mobile {
+.hero-poster-mobile-wrap {
   display: none;
+  position: relative;
+}
+
+.hero-poster-mobile {
   width: 100%;
   height: auto;
+  display: block;
 }
 
 .hero-text {
@@ -201,6 +206,19 @@ h1, h2, h3 {
   width: 380px;
   max-width: 100%;
   position: relative;
+}
+
+.sold-out-stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130%;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+  z-index: 5;
+  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.3));
 }
 
 .hero-photo .photo-frame {
@@ -859,7 +877,7 @@ footer a:hover {
     align-items: stretch;
   }
 
-  .hero-poster-mobile {
+  .hero-poster-mobile-wrap {
     display: block;
     width: 100%;
     margin: 0 0 24px;
