@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beauty Experience</title>
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=14">
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -26,7 +26,13 @@
     <video class="hero-poster-mobile" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg" aria-label="Beauty Experience — путешествие в мир красоты и здоровья">
       <source src="hero-video.mp4" type="video/mp4">
     </video>
-    <div class="poster-plate"></div>
+    <div class="poster-plate">
+      <select class="city-select-el" aria-label="Выберите город">
+        <option value="" disabled selected>Выберите свой город</option>
+          <option value="/">Краснодар</option>
+          <option value="/ekb/">Екатеринбург</option>
+      </select>
+    </div>
   </div>
 
   <section class="hero">
@@ -34,13 +40,13 @@
       <h1>BEAUTY<br><span class="accent">EXPERIENCE</span></h1>
       <p class="script">Путешествие в мир<br>красоты и здоровья</p>
 
-      <label class="city-select">
-        <span>Город</span>
-        <select id="city-select">
-          <option value="/" selected>Краснодар</option>
+      <div class="city-select">
+        <select class="city-select-el" aria-label="Выберите город">
+          <option value="" disabled selected>Выберите свой город</option>
+          <option value="/">Краснодар</option>
           <option value="/ekb/">Екатеринбург</option>
         </select>
-      </label>
+      </div>
       </div>
 
       </div>
@@ -133,8 +139,10 @@
         updateBtn();
       });
 
-      document.getElementById('city-select').addEventListener('change', function (e) {
-        window.location.href = e.target.value;
+      document.querySelectorAll('.city-select-el').forEach(function (sel) {
+        sel.addEventListener('change', function (e) {
+          if (e.target.value) window.location.href = e.target.value;
+        });
       });
     })();
   </script>
