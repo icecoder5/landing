@@ -1000,10 +1000,9 @@ footer a:hover {
 .poster-plate {
   position: absolute;
   left: 0;
-  top: 71.5%;
+  top: 70%;
   width: 58%;
-  height: 16.5%;
-  background: #f5e9dd;
+  height: 16%;
   display: flex;
   align-items: center;
   justify-content: center;
