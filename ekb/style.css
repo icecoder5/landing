@@ -975,3 +975,21 @@ footer a:hover {
     grid-column: auto;
   }
 }
+
+.poster-cta {
+  position: absolute;
+  left: 0;
+  top: 60%;
+  width: 56%;
+  text-align: center;
+  padding: 11px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+}
