@@ -888,7 +888,8 @@ footer a:hover {
 
   .hero-text h1,
   .hero-text .script,
-  .hero-text .meta-row {
+  .hero-text .meta-row,
+  .hero-text .btn-hero-ticket {
     display: none;
   }
 
