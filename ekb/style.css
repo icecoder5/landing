@@ -993,3 +993,11 @@ footer a:hover {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
   text-decoration: none;
 }
+
+.btn-hero-ticket {
+  display: inline-block;
+  width: auto;
+  margin-top: 24px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-light-dark));
+}
