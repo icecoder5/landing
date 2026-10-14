@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beauty Experience</title>
-<link rel="stylesheet" href="style.css?v=15">
+<link rel="stylesheet" href="style.css?v=16">
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -29,7 +29,6 @@
         <a href="#about">О событии</a>
         <a href="#directions" class="nav-directions">Направления</a>
         <a href="#participants">Участницам</a>
-        <a href="#partners">Партнёрам</a>
         <a href="#contacts">Контакты</a>
       </nav>
     </div>
@@ -98,20 +97,7 @@
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>Атмосфера вдохновения и заботы о себе</li>
       </ul>
       <a class="btn btn-participant" href="https://ticketcode.ru/event/beauty-experience-ekaterinburg-teatro-veneziano-ekaterinburg-pokrovskij-passazh--2" target="_blank" rel="noopener">Купить билет</a>
-    </div>
-
-    <div class="card card-partners" id="partners">
-      <p class="card-label">Для партнёров</p>
-      <h3>Станьте частью<br><span class="accent">BEAUTY EXPERIENCE</span></h3>
-      <ul>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>Представьте свой бренд целевой аудитории</li>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>Проведите диагностики, консультации и тестирования</li>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>Получите новые контакты и партнёрства</li>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>Укрепите имидж эксперта в индустрии</li>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>Участие в масштабном мероприятии о красоте и здоровье</li>
-      </ul>
-      <a class="btn btn-partner" href="#" id="partner-btn">Хочу стать партнёром</a>
-      <p class="card-caption">Ограниченное количество мест</p>
+      <p class="card-caption">Количество мест ограничено</p>
     </div>
   </section>
 
@@ -261,14 +247,6 @@
         modal.classList.remove('is-open');
       }
 
-      [
-        ['partner-btn', 'Скоро здесь будет ссылка на анкету партнёра']
-      ].forEach(function (item) {
-        document.getElementById(item[0]).addEventListener('click', function (e) {
-          e.preventDefault();
-          openModal(item[1]);
-        });
-      });
       modalClose.addEventListener('click', closeModal);
       modal.addEventListener('click', function (e) {
         if (e.target === modal) closeModal();
