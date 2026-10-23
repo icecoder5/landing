@@ -651,7 +651,7 @@ h1, h2, h3 {
 .partner-featured .partner-card {
   width: 100%;
   max-width: 360px;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 12 / 5;
   padding: 20px 28px;
 }
 
