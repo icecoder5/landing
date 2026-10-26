@@ -672,7 +672,7 @@ h1, h2, h3 {
 .partner-card {
   width: 100%;
   min-width: 0;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 2;
   border-radius: 16px;
   background: var(--white);
   display: flex;
